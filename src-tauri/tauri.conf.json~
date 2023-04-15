@@ -12,11 +12,13 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false
-    },
-    "systemTray": {
-      "iconPath": "icons/icon.png",
-      "iconAsTemplate": true
+      "fs": {
+			"all": true,
+			"scope": ["./src-tauri/**/*", "./savedDate.txt"]
+		},
+		"path": {
+			"all": true
+		}
     },
     "bundle": {
       "active": true,
