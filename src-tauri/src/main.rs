@@ -32,9 +32,12 @@ fn main() {
 let exit = CustomMenuItem::new("exit".to_string(), "Exit");
 let hide = CustomMenuItem::new("hide".to_string(), "Hide");
 let show= CustomMenuItem::new("show".to_string(), "Show");
+let about = CustomMenuItem::new("about".to_string(), "About");
 let tray_menu = SystemTrayMenu::new()
   .add_item(show)
   .add_item(hide)
+ .add_native_item(SystemTrayMenuItem::Separator)
+  .add_item(about)
   .add_native_item(SystemTrayMenuItem::Separator)
   .add_item(exit);
 let system_tray = SystemTray::new().with_menu(tray_menu);
@@ -82,6 +85,10 @@ SystemTrayEvent::LeftClick {
           "hide" => {
             let window = app.get_window("main").unwrap();
             window.hide().unwrap();
+          }
+          "about" => {
+            let window = app.get_window("main").unwrap();
+window.eval("window.location.replace('about.html')");
           }
           "show" => {
             let window = app.get_window("main").unwrap();

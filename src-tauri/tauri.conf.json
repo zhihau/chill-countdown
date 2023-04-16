@@ -12,7 +12,13 @@
   },
   "tauri": {
     "allowlist": {
-      "all": false
+      "all": false,
+      "shell": {
+        "all": true, 
+        "execute": true, 
+        "sidecar": true, 
+        "open": true
+      }
     },
     "systemTray": {
       "iconPath": "icons/icon.png",
@@ -33,7 +39,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.zhihaushiu.dev",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -60,10 +66,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height": 560,
         "resizable": true,
         "title": "Chill Countdown",
-        "width": 800
+        "width": 500
       }
     ]
   }

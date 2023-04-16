@@ -12,13 +12,17 @@
   },
   "tauri": {
     "allowlist": {
-      "fs": {
-			"all": true,
-			"scope": ["./src-tauri/**/*", "./savedDate.txt"]
-		},
-		"path": {
-			"all": true
-		}
+      //"all": false,
+      "shell": {
+        "all": true, // enable all shell APIs
+        "execute": true, // enable process spawn APIs
+        "sidecar": true, // enable spawning sidecars
+        "open": true // enable opening files/URLs using the default program
+      }
+    },
+    "systemTray": {
+      "iconPath": "icons/icon.png",
+      "iconAsTemplate": true
     },
     "bundle": {
       "active": true,
@@ -35,7 +39,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.zhihaushiu.dev",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
@@ -62,10 +66,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "height": 600,
+        "height": 560,
         "resizable": true,
         "title": "Chill Countdown",
-        "width": 800
+        "width": 500
       }
     ]
   }
